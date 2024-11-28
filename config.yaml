@@ -1,0 +1,34 @@
+data:
+  path: data/
+  train_file: train_data.csv
+  valid_file: valid_data.csv
+  wavs_location: "../data/"
+model_name: multimodal-multilabel-model.pt
+optimizer:
+  type: "Adam"
+  lr: 0.0001
+  beta1: 0.9
+  beta2: 0.999
+
+epochs : 10
+batch_size : 100
+positional_encoding_max_len: 5000
+audio_split_samples: 1000
+hid_dim: 256
+audio_representation_layers: 3
+n_heads: 8
+pf_dim: 512
+dropout: 0.2
+text_representation_layers: 2
+image_representation_layers: 3
+cross_attention_layers: 2
+clip : 1
+log_path: "runs/weighted_loss"
+mode: "weighted_loss"
+channels1: 3
+image_size1: [256, 256]
+patch_size1: [16, 16]
+channels2: 3
+image_size2: [256, 256]
+patch_size2: [16, 16]
+output_dim: 1
